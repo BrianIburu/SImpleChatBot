@@ -49,6 +49,14 @@ function Chatinput({chatMess,setChatMess}){
         setChatMess([])
     }
 
+    function keyDown(e){
+        if(e.key === "Enter"){
+            sendMessage();
+        }else if(e.key === "Escape"){
+            setText("")
+        }
+    }
+
     return(
 
         <div className="input-container">
@@ -59,6 +67,7 @@ function Chatinput({chatMess,setChatMess}){
                 size={25}
                 onChange={saveInput}
                 value={text}
+                onKeyDown={keyDown}
             />
             <button
                 className="send-btn"
