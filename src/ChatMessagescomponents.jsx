@@ -26,6 +26,7 @@ function ChatMessCompo({chatMess}){
                         message = {c.message}
                         pic = {c.pic}
                         sender = {c.sender}
+                        time = {c.time}
                     />
                 )
             })}

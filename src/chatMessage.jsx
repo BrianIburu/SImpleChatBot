@@ -1,7 +1,9 @@
-function ChatMessage(props){
+import dayjs from "dayjs";
+
+function ChatMessage({message, pic, sender, time}){
 
     //This is a shortcut of props full is eg const message = props.message
-    const {message, pic, sender} = props
+    //const {message, pic, sender} = props
 
     
     return(
@@ -19,7 +21,18 @@ function ChatMessage(props){
                 />
             }
             
-            <span className="message">{message}</span>
+            <span 
+                className="message"
+            >
+                {message}
+                {time && (
+                    <div
+                        className="message-time"
+                    >
+                        {dayjs(time).format('HH:mm')}
+                    </div>
+                )}
+            </span>
 
             {sender === "user" &&
                 <img 

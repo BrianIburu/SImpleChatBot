@@ -66,5 +66,8 @@
     align-items: start;
 }
 
-.messageProfile{
+.message-time{
+    font-size: 14px;
+    color: rgb(125, 125, 125);
+    margin-top: 5px;
 }

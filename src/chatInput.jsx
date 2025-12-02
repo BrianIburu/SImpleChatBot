@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import dayjs from "dayjs";
 import ChatMessCompo from "./ChatMessagescomponents.jsx";
 import Userlogo from './assets/user.png'
 import Botlogo from './assets/chatbot.png'
@@ -20,7 +21,8 @@ function Chatinput({chatMess,setChatMess}){
                 message: text,
                 pic:Userlogo,
                 sender: "user",
-                id:crypto.randomUUID()
+                id:crypto.randomUUID(),
+                time: dayjs().valueOf()
             }
         ]
 
@@ -33,7 +35,8 @@ function Chatinput({chatMess,setChatMess}){
                 message: resp,
                 pic:Botlogo,
                 sender: "robot",
-                id:crypto.randomUUID()
+                id:crypto.randomUUID(),
+                time:dayjs().valueOf()
             }
         ]
         setChatMess(robotMessages)
