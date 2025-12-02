@@ -10,15 +10,16 @@ function App() {
   const[chatMess, setChatMess] = useState([])
 
   return(
-    <>
+    <div className="app-container">
+      
+      <ChatMessCompo
+        chatMess={chatMess}
+      />
       <Chatinput 
         chatMess={chatMess}
         setChatMess={setChatMess}
       />
-      <ChatMessCompo
-        chatMess={chatMess}
-      />
-    </>
+    </div>
   )
 }
 

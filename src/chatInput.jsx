@@ -44,15 +44,17 @@ function Chatinput({chatMess,setChatMess}){
 
     return(
 
-        <div>
+        <div className="input-container">
             <input 
                 type="text"
-                placeholder="Send a message to the chat box"
+                className="input-text"
+                placeholder="Ask a question to the chat bot"
                 size={25}
                 onChange={saveInput}
                 value={text}
             />
             <button
+                className="send-btn"
                 onClick={sendMessage}
             >
                 Send
