@@ -7,11 +7,15 @@ import ChatMessCompo from "./ChatMessagescomponents.jsx"
 
 function App() {
 
-  const[chatMess, setChatMess] = useState(JSON.parse(localStorage.getItem('message')));
+  const [chatMess, setChatMess] = useState(() => {
+    const saved = localStorage.getItem('message');
+    return saved ? JSON.parse(saved) : [];
+  });
+
 
   useEffect(() => {
-    localStorage.setItem('message', JSON.stringify(chatMess))
-  }, [chatMess])
+    localStorage.setItem('message', JSON.stringify(chatMess));
+  }, [chatMess]);
 
   return(
     <div className="app-container">
